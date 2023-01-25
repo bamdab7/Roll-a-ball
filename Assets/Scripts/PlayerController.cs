@@ -42,4 +42,12 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(movement * speed); //Se le multiplica la 'fuerza' que estamos añadiendo
     }
+
+    //Necesitamos que detecte y pruebe las colisiones en la esfera de la bola jugador
+    private void OnTriggerEnter(Collider other)
+    {
+         //La funcion detectara el contacto entre el jugador y los objetos pero sin crear una colision actual
+         //La funcion debera apliarse solo a los objetos pickup
+         other.gameObject.SetActive(false); 
+    }
 }
